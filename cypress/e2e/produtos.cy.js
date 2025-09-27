@@ -53,14 +53,14 @@ describe('Testes da Funcionalidade Produtos', () => {
 
     it('Deve editar um produto já cadastrado', () => {
         cy.request('produtos').then(response => {
-            let id = response.body.produtos._id
+            let id = response.body.produtos[0]._id
             cy.request({
                 method: 'PUT', 
                 url: `produtos/${id}`,
                 headers: {authorization: token}, 
                 body: 
                 {
-                    "nome": "Logitech MX Vertical",
+                    "nome": "Produto alterado",
                     "preco": 100,
                     "descricao": "Produto editado",
                     "quantidade": 100
