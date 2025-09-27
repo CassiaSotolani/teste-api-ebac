@@ -43,7 +43,7 @@ describe('Testes da Funcionalidade Produtos', () => {
         })
     });
 
-    it.only('Deve validar mensagem de erro ao cadastrar produto repetido', () => {
+    it('Deve validar mensagem de erro ao cadastrar produto repetido', () => {
         cy.cadastrarProduto(token, 'Logitech MX Vertical', 250, "Descrição do produto novo", 180)
             .then((response) => {
                 expect(response.status).to.equal(400)
